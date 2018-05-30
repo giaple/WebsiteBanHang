@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    maOrder: {
+    orderId: {
         type: String,
         required : true
     },
@@ -21,5 +21,11 @@ var schema = new mongoose.Schema({
     guestInfor:{
         Name:{type: String, required: true},
         Email:{type: String, required: true},
+        phoneNumber:{type: String, required: true},
+        Other: [[]]
     }
-})
+},{
+    versionKey: false // You should be aware of the outcome after set to false
+},{collection: 'order'});
+
+module.exports = mongoose.model('order',schema);
