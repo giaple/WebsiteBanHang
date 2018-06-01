@@ -5,13 +5,14 @@ var productModel = require('../models/Product');
 
 router.get('/home/:number',function(req,res,next){
 
-        var result = [];
+    var result = [];
 
     productModel.find({hot: true})
         .limit(number)
         .exec(function(err,data){
            if(err){
-               result = err;
+               res.json(err);
+               module.exports = router;
            } else{
                result.push({hot:data}); 
            }
@@ -35,3 +36,5 @@ router.get('/home/:number',function(req,res,next){
                    }
                 });
 })
+
+module.exports = router;

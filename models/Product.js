@@ -17,4 +17,10 @@ var schema = new mongoose.Schema({
     versionKey: false // You should be aware of the outcome after set to false
 },{collection: 'product'});
 
-module.exports = mongoose.model('product',schema);
+var model = mongoose.model('product',schema);
+
+model.createIndexes({
+    productName: "text"
+});
+
+module.exports = model;

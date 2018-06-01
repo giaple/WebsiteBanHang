@@ -1,1 +1,1 @@
-module.exports = {url : 'mongodb://localhost:3000/quanlybanhang'};
+module.exports = {url : 'mongodb://localhost:27017/QuanLyBanHang'};
